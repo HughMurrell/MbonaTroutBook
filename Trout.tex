@@ -1,0 +1,150 @@
+
+\documentclass[12pt,reqno]{report}      % Sets 12pt font, equation numbers on right
+\usepackage{amsmath,amssymb,amsfonts} % Typical maths resource packages
+\usepackage{graphics}                 % Packages to allow inclusion of graphics
+\usepackage{color}                    % For creating coloured text and background
+\usepackage{siunitx}                  % for degrees celsius
+\usepackage[toc,page]{appendix}
+%\usepackage[margin=2in]{geometry}
+\usepackage{lscape}
+\usepackage{float}
+
+
+\usepackage[colorlinks,citecolor=blue,linkcolor=blue]{hyperref}                 % For creating hyperlinks in cross references. It should be after the color package. The option colorlinks produces colored entries without boxes. The option citecolor=blue changes the default green citations to blue.
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
+
+\DeclareGraphicsExtensions{.pdf}
+\parindent 0cm
+\parskip 0.2cm
+\topmargin 0.2cm
+\oddsidemargin 1cm
+\evensidemargin 0.5cm
+\textwidth 15cm
+\textheight 21cm
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\makeatletter
+\def\thickhline{%
+  \noalign{\ifnum0=`}\fi\hrule \@height \thickarrayrulewidth \futurelet
+   \reserved@a\@xthickhline}
+\def\@xthickhline{\ifx\reserved@a\thickhline
+               \vskip\doublerulesep
+               \vskip-\thickarrayrulewidth
+             \fi
+      \ifnum0=`{\fi}}
+\makeatother
+
+\newlength{\thickarrayrulewidth}
+\setlength{\thickarrayrulewidth}{4\arrayrulewidth}
+
+
+\def\W{$\mathbb{ W}$}
+\def\R{\mathbb{ R}}
+\def\S{\mathbb{ S}}
+\def\I{\mathbb{ I}}
+\makeindex
+
+
+\title{Mbona Private Nature Reserve \\
+        Small Scale Trout Hatcheries \\
+        \vspace{2cm} 
+        Mbona Fishing Committee \\
+        \vspace{2cm}
+        \today}
+
+\author{
+\htmladdnormallink           % Puts a hyperlink on to the author's name
+{Hugh Murrell}{http://www.cs.ukzn.ac.za/~hughm}, Editor \\
+\htmladdnormallink
+{Pierre Olivier}{http://www.pierrecraft.co.za}, Technical \\
+\htmladdnormallink
+{Dennis Dyer}{http://www.mbona.co.za}, Chairman \\  
+\vspace{1cm} \\
+{\small\em \copyright none at all }}
+
+ \date{ }
+     \usepackage{draftwatermark}                   %%%   These four lines
+      \SetWatermarkText{}   %%%   put a watermark
+       \SetWatermarkScale{3}                          %%%  on all pages. Just omit them if 
+        \SetWatermarkColor[rgb]{0.9,0,0}               %%%  it is not needed.
+\begin{document}
+\makeatletter\@openrightfalse
+\maketitle
+ \addcontentsline{toc}{chapter}{Contents}
+\pagenumbering{roman}
+\tableofcontents
+\listoffigures
+\listoftables
+
+
+\chapter*{Preface}\normalsize
+  \addcontentsline{toc}{chapter}{Preface}
+\pagestyle{plain}
+
+This manual is a basic guide to the running of a successful practice of 
+small-scale trout farming. It summarises all the technical information that is 
+important to know for small-scale trout production.
+
+This document was created using 
+{\htmladdnormallink {Leslie Lamport's}{ https://en.wikipedia.org/wiki/Leslie_Lamport}} document preparation system \LaTeX \cite{lamport}.
+The content for the first chapter of this manual was mostly copied from a document  called {\it Small-scale rainbow trout farming} issued by 
+the Food and Agriculture Organisation of the United Nations \cite{fao} which has been placed in
+the public domain at 
+{\htmladdnormallink{http://www.fao.org/docrep/015/i2125e/i2125e.pdf}{http://www.fao.org/docrep/015/i2125e/i2125e.pdf}} This {\bf fao} document has a copyright notice that encourages reproduction and dissemination of the material it contains with a statement that non-commercial uses will be authorized free of charge on request. 
+So we must make a request to {\htmladdnormallink {copyright@fao.org}{ http://copyright@fao.org}} if we want to retain the material in the first chapter.
+
+In later chapters, this FAO document is augmented using the local knowledge of:
+
+\begin{itemize}
+  \item[] {\bf Gareth Powell},  Mbona Conservation Officer, 2000-2018
+  \item[] {\bf Dave Forsyth}, Mbona Manager, 2016-Present
+  \item[] {\bf Gavin Chin}, retired Trout Hatchery manager.
+\end{itemize}
+  
+Editing and oversight of this document was carried out by:
+\begin{itemize}
+\item[] {\bf Dr. Dennis Dyer}, Mbona fishing committee chairman, 2000-Present
+\item[]  {\bf Bernard McDonald}, Local fisherman, historian and linguist.
+\end{itemize}
+
+The purpose of this manual is to guide the reader through the necessary technical information, 
+and practical solutions to the day-to-day operation of a small-scale Rainbow Trout farm with
+particular emphasis on the infrastructure setup and operating procedures at the Mbona Hatcheries.
+
+
+\pagestyle{headings}
+\pagenumbering{arabic}
+
+\setcounter{chapter}{-1}
+\include{ch0}
+\include{ch1}
+\include{ch2}
+\include{ch3}
+\include{ch4}
+\include{ch5}
+\include{ch6}
+\include{chApp}
+%\include{ch5}
+
+\begin{thebibliography}{99}
+  \addcontentsline{toc}{chapter}{Bibliography}
+\bibitem{lamport} L. Lamport, {\bf \LaTeX \ A Document Preparation System}
+Addison-Wesley, California 1986.
+\bibitem{fao} András Woynarovich, György Hoitsy and Thomas Moth-Poulsen.
+{\bf Small-scale rainbow trout farming}, FAO technical paper, 561, Rome, 2011,
+available from {\htmladdnormallink{http://www.fao.org/docrep/015/i2125e/i2125e.pdf}{http://www.fao.org/docrep/015/i2125e/i2125e.pdf}}
+\bibitem{waterpak}Bruce Finney, {\bf WaterPAK, a guide for irrigation management},
+Australian Cotton Research and Development Corporation, 2013.
+\bibitem{tic}{\bf Trout in the Classroom}, {\htmladdnormallink{http://www.troutintheclassroom.org/home}
+{http://www.troutintheclassroom.org/home}}.
+
+\end{thebibliography}
+
+\include{index}
+ \addcontentsline{toc}{chapter}{Index}
+\end{document}
